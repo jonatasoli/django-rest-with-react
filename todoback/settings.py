@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'rest_framework',
     'rest_framework.authtoken',
-    'core',
+    'api',
     'todo',
 ]
 
@@ -116,3 +116,4 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 CORS_ORIGIN_ALLOW_ALL = True
+AUTH_USER_MODEL = 'api.UserProfile'

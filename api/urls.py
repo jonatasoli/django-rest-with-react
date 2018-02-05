@@ -1,6 +1,14 @@
 from django.conf.urls import url
-from rest_framework.authtoken import views as drf_views
+from django.conf.urls import include
+from rest_framework.routers import DefaultRouter
+from . import views
+
+router = DefaultRouter()
+router.register('login', views.LoginViewSet, base_name='login')
+router.register('listweek', views.WeekViewSet, base_name='week')
+router.register('listdone', views.DoneViewSet, base_name='done')
+router.register('listlate', views.LateViewSet, base_name='late')
 
 urlpatterns = [
-    url(r'^auth$', drf_views.obtain_auth_token, name='auth'),
+    url(r'', include(router.urls))
 ]
